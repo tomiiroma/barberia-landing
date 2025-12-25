@@ -61,13 +61,20 @@ export function Footer() {
             {/* Desarrollado por RD TECH */}
             <div className="flex flex-col items-center gap-1 mt-3">
               <p className="text-background/50 text-sm">Desarrollado por</p>
-              <Image
-                src="/RD%20TECH.png"
-                alt="RD TECH"
-                width={300}
-                height={120}
-                className="h-24 w-auto md:h-32 md:w-auto lg:h-36 lg:w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
-              />
+              <a
+                href="https://rdtech-web.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer inline-block"
+              >
+                <Image
+                  src="/RD TECH.png"
+                  alt="RD TECH"
+                  width={300}
+                  height={120}
+                  className="h-24 w-auto md:h-32 md:w-auto lg:h-36 lg:w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </a>
             </div>
           </div>
         </div>
