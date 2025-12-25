@@ -62,7 +62,7 @@ export function Footer() {
             <div className="flex flex-col items-center gap-1 mt-3">
               <p className="text-background/50 text-sm">Desarrollado por</p>
               <a
-                href="https://rdtech-web.vercel.app/"
+                href="https://www.rdtech.com.ar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cursor-pointer inline-block"
