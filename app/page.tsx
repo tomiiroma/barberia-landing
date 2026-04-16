@@ -4,6 +4,7 @@ import { ValueProposition } from "@/components/value-proposition"
 import { Services } from "@/components/services"
 import { FeaturedTreatments } from "@/components/featured-treatments"
 import { Trust } from "@/components/trust"
+import { Testimonials } from "@/components/testimonials"
 import { Location } from "@/components/location"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Services />
       <FeaturedTreatments />
       <Trust />
+      <Testimonials />
       <Location />
       <FinalCTA />
       <Footer />

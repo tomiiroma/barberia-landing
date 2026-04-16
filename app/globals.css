@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme for feminine pink aesthetic business */
-  --background: oklch(0.99 0.005 346);
-  --foreground: oklch(0.25 0.01 280);
+  /* Paleta blush rose sofisticada — estética premium 2026 */
+  --background: oklch(0.99 0.003 350);
+  --foreground: oklch(0.15 0.012 290);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.01 280);
+  --card-foreground: oklch(0.15 0.012 290);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.01 280);
-  --primary: oklch(0.75 0.15 350);
+  --popover-foreground: oklch(0.15 0.012 290);
+  --primary: oklch(0.62 0.155 349);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.96 0.01 346);
-  --secondary-foreground: oklch(0.25 0.01 280);
-  --muted: oklch(0.96 0.01 346);
-  --muted-foreground: oklch(0.5 0.01 280);
-  --accent: oklch(0.85 0.12 348);
-  --accent-foreground: oklch(0.25 0.01 280);
+  --secondary: oklch(0.96 0.014 348);
+  --secondary-foreground: oklch(0.25 0.01 285);
+  --muted: oklch(0.97 0.007 350);
+  --muted-foreground: oklch(0.52 0.012 290);
+  --accent: oklch(0.91 0.05 348);
+  --accent-foreground: oklch(0.25 0.01 285);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.93 0.01 346);
-  --input: oklch(0.93 0.01 346);
-  --ring: oklch(0.75 0.15 350);
-  --chart-1: oklch(0.75 0.15 350);
-  --chart-2: oklch(0.85 0.12 348);
-  --chart-3: oklch(0.65 0.18 352);
-  --chart-4: oklch(0.8 0.1 345);
-  --chart-5: oklch(0.7 0.14 355);
-  --radius: 1rem;
+  --border: oklch(0.92 0.012 348);
+  --input: oklch(0.93 0.010 348);
+  --ring: oklch(0.62 0.155 349);
+  --chart-1: oklch(0.62 0.155 349);
+  --chart-2: oklch(0.82 0.12 348);
+  --chart-3: oklch(0.55 0.18 352);
+  --chart-4: oklch(0.75 0.10 345);
+  --chart-5: oklch(0.70 0.14 355);
+  --radius: 0.875rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -47,7 +47,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.75 0.15 350);
+  --primary: oklch(0.72 0.145 349);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -76,7 +76,8 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,7 +120,44 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+  html {
+    scroll-behavior: smooth;
   }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans, system-ui, sans-serif);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif, Georgia, serif);
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif, Georgia, serif);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+@keyframes shimmer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-shimmer {
+  animation: shimmer-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float-gentle 5s ease-in-out infinite;
 }
