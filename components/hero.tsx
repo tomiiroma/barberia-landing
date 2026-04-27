@@ -1,126 +1,121 @@
 import Image from "next/image"
-import { MessageCircle, Sparkles, MapPin, ArrowRight, ShieldCheck } from "lucide-react"
+import { MessageCircle, MapPin } from "lucide-react"
+import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { SiteHeader } from "@/components/site-header"
 
 export function Hero() {
-  const whatsappLink =
-    "https://wa.me/5491161233500?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20tratamientos"
+  const wa = waLink(WA_PRESETS.default)
+  const mapsQuery =
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent("Boulogne Sur Mer 445, Once, CABA")
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background flex items-center">
-      {/* Fondos decorativos premium */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_30%,oklch(0.91_0.05_348/0.35),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_10%_80%,oklch(0.96_0.014_348/0.4),transparent)]" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/60 to-transparent" />
+    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
+      {/* Capas de fondo premium — cero dependencia de fotos raster */}
+      <div className="absolute inset-0 bg-hero-lux" aria-hidden />
+      <div
+        className="absolute inset-0 bg-hero-mesh opacity-90 pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-noise opacity-[0.055] mix-blend-overlay pointer-events-none"
+        aria-hidden
+      />
+      {/* “Luz de estudio” suave, oro frío + highlight cenital */}
+      <div
+        className="absolute -top-1/3 left-1/2 h-[70vh] w-[min(140%,1100px)] -translate-x-1/2 bg-[radial-gradient(ellipse,oklch(0.55_0.12_85/0.14)_0%,transparent_68%)] pointer-events-none blur-2xl"
+        aria-hidden
+      />
+      <div
+        className="absolute top-[15%] right-0 h-[50vh] w-[40vw] max-w-md bg-[radial-gradient(ellipse,oklch(0.7_0.08_85/0.06)_0%,transparent_70%)] pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-hero-vignette pointer-events-none"
+        aria-hidden
+      />
 
-      <div className="container relative mx-auto max-w-6xl px-4 py-24 md:py-32 lg:py-0 lg:min-h-screen lg:flex lg:items-center">
-        <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full">
+      {/* Marco interior fino (composición editorial) */}
+      <div
+        className="absolute inset-5 sm:inset-7 md:inset-10 rounded-2xl border border-white/[0.06] pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute left-5 top-5 h-10 w-10 sm:left-7 sm:top-7 border-l-2 border-t-2 border-primary/45 rounded-tl-md pointer-events-none"
+        aria-hidden
+      />
+      <div
+        className="absolute right-5 bottom-5 h-10 w-10 sm:right-7 sm:bottom-7 border-r-2 border-b-2 border-primary/45 rounded-br-md pointer-events-none"
+        aria-hidden
+      />
 
-          {/* Columna izquierda: contenido */}
-          <div className="order-2 lg:order-1 text-center lg:text-left">
+      <SiteHeader />
 
-            {/* Badge de credencial */}
-            <div className="inline-flex items-center gap-2.5 bg-white/90 backdrop-blur-sm border border-border px-4 py-2 rounded-full mb-8 shadow-sm">
-              <div className="h-2 w-2 rounded-full bg-primary animate-shimmer" />
-              <span className="text-sm font-medium text-foreground/80">
-                Patricia González · Cosmiatra
-              </span>
-              <span className="hidden sm:inline text-xs text-muted-foreground border-l border-border pl-2.5">
-                M.N. 62.996
-              </span>
-            </div>
-
-            {/* Headline principal */}
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-5 leading-[1.05] tracking-tight text-balance">
-              Sentite bella.
-              <br />
-              <span className="text-primary">Sentite bien.</span>
-            </h1>
-
-            {/* Subtítulo persuasivo */}
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed text-pretty">
-              Tratamientos estéticos personalizados en CABA.
-              Resultados visibles, sin cirugía y con atención de profesional certificada.
-            </p>
-
-            {/* Píldoras de confianza */}
-            <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-10">
-              {[
-                { icon: Sparkles, text: "Consulta sin cargo" },
-                { icon: ShieldCheck, text: "Matrícula M.N. 62.996" },
-                { icon: MapPin, text: "Microcentro · Caballito" },
-              ].map((badge, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-1.5 bg-white border border-border px-3.5 py-1.5 rounded-full text-sm text-foreground/70 shadow-sm"
+      <div className="relative z-10 flex flex-1 flex-col justify-center py-32 pb-36 md:py-20 md:pb-28">
+        <div className="container mx-auto max-w-6xl px-4 w-full">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
+            <div className="text-center lg:text-left order-2 lg:order-1">
+              <p className="text-primary text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase mb-4">
+                Once · Boulogne Sur Mer 445
+              </p>
+              <h1 className="font-display text-4xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl text-white text-balance mb-5">
+                Corte, barba y diseño.
+                <span className="text-primary"> Nivel Once.</span>
+              </h1>
+              <p className="text-base sm:text-lg text-white/70 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-2">
+                Salís afilado. Mano firme, cero humo — la experiencia se siente, no se promete con megapíxeles.
+              </p>
+              <p className="text-sm text-white/40 max-w-md mx-auto lg:mx-0 mb-8">
+                Barbería con agenda real. Reservá y vení con tranquilidad.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start sm:items-stretch sm:max-w-lg lg:max-w-none">
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base sm:text-lg px-7 py-4 rounded-xl shadow-[0_8px_40px_-6px_rgba(201,164,76,0.35)] hover:brightness-110 active:scale-[0.99] transition-all min-h-[54px] ring-1 ring-white/10"
                 >
-                  <badge.icon className="h-3.5 w-3.5 text-primary flex-shrink-0" />
-                  <span>{badge.text}</span>
-                </div>
-              ))}
+                  <MessageCircle className="h-5 w-5 shrink-0" />
+                  Reservar turno por WhatsApp
+                </a>
+                <a
+                  href={mapsQuery}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 text-white/90 border border-white/12 hover:border-primary/50 hover:bg-white/[0.04] hover:text-primary px-6 py-4 rounded-xl font-semibold transition-colors min-h-[54px] backdrop-blur-sm"
+                >
+                  <MapPin className="h-5 w-5 shrink-0" />
+                  Ver ubicación
+                </a>
+              </div>
             </div>
 
-            {/* CTA principal */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a href={whatsappLink} className="group">
-                <div className="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-7 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-primary/25 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
-                  <MessageCircle className="h-5 w-5 flex-shrink-0" />
-                  Quiero mi consulta gratis
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </div>
-              </a>
-            </div>
-
-            {/* Microcopy anti-fricción */}
-            <p className="text-sm text-muted-foreground mt-3 text-center lg:text-left">
-              Sin compromiso · Respondemos en el día
-            </p>
-          </div>
-
-          {/* Columna derecha: visual del logo */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div className="relative animate-float">
-
-              {/* Anillo decorativo exterior */}
-              <div className="absolute -inset-6 rounded-full border-2 border-primary/10" />
-              <div className="absolute -inset-12 rounded-full border border-primary/5" />
-
-              {/* Resplandor de fondo */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/15 via-accent/20 to-secondary/30 blur-3xl scale-125" />
-
-              {/* Contenedor del logo */}
-              <div className="relative bg-white/70 backdrop-blur-md rounded-full p-6 md:p-8 shadow-2xl border border-white/80">
-                <Image
-                  src="/nuevo_logo.png"
-                  alt="Te Sentís Bien — Estética Integral"
-                  width={300}
-                  height={300}
-                  className="h-52 w-52 md:h-64 md:w-64 lg:h-56 lg:w-56 xl:h-64 xl:w-64 object-contain"
-                  priority
+            {/* Identidad: logo vector / marca (no confundir con fotos de clientes) */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px]">
+                <div
+                  className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-primary/15 via-transparent to-primary/5 blur-xl opacity-80"
+                  aria-hidden
                 />
-              </div>
-
-              {/* Badge flotante: matrícula */}
-              <div className="absolute -bottom-3 -right-3 md:-bottom-5 md:-right-5 bg-white rounded-2xl px-3.5 py-2.5 shadow-xl border border-border">
-                <p className="text-[10px] text-muted-foreground font-medium leading-none mb-1">Matrícula Nacional</p>
-                <p className="text-sm font-bold text-foreground">M.N. 62.996</p>
-              </div>
-
-              {/* Badge flotante: ubicación */}
-              <div className="absolute -top-2 -left-4 md:-top-4 md:-left-6 bg-white rounded-2xl px-3 py-2 shadow-xl border border-border">
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="h-3.5 w-3.5 text-primary flex-shrink-0" />
-                  <p className="text-xs font-semibold text-foreground">CABA</p>
+                <div className="relative rounded-2xl border border-primary/25 bg-gradient-to-b from-white/[0.04] to-transparent p-8 sm:p-10 shadow-2xl shadow-black/50 ring-1 ring-white/5">
+                  <Image
+                    src="/vallejos-logo.png"
+                    alt="Vallejos Barbería 2.0"
+                    width={400}
+                    height={400}
+                    className="w-full h-auto object-contain drop-shadow-[0_0_40px_rgba(212,175,55,0.12)]"
+                    priority
+                    quality={90}
+                  />
                 </div>
+                <p className="text-center lg:text-right text-[10px] uppercase tracking-[0.2em] text-white/30 mt-4">
+                  Identidad de marca
+                </p>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
-
-      {/* Separador inferior decorativo */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   )
 }

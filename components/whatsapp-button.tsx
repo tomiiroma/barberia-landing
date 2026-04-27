@@ -1,40 +1,39 @@
 "use client"
 
 import { MessageCircle } from "lucide-react"
+import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 
 export function WhatsAppButton() {
-  const whatsappLink =
-    "https://wa.me/5491161233500?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20tratamientos"
+  const whatsappLink = waLink(WA_PRESETS.default)
 
   return (
     <>
-      {/* Barra sticky mobile — ancho completo */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-        <div className="bg-foreground/95 backdrop-blur-md border-t border-white/10 p-3">
+        <div className="bg-[#0a0a0a]/95 backdrop-blur-md border-t border-primary/20 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <a
             href={whatsappLink}
-            className="flex items-center justify-center gap-3 w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3.5 rounded-xl text-base font-bold shadow-lg transition-all duration-200 active:scale-[0.98]"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground px-6 py-3.5 rounded-xl text-base font-bold shadow-lg shadow-amber-900/30 transition-all duration-200 active:scale-[0.98] min-h-[52px]"
           >
-            <MessageCircle className="h-5 w-5 flex-shrink-0" />
-            Consultar gratis por WhatsApp
+            <MessageCircle className="h-5 w-5 shrink-0" />
+            Reservar turno por WhatsApp
           </a>
-          <p className="text-center text-xs text-white/30 mt-2 pb-safe">
-            Sin costo · Respondemos en el día
-          </p>
+          <p className="text-center text-[11px] text-white/35 mt-2">Lun a Sáb 10–20 h · Once, CABA</p>
         </div>
       </div>
 
-      {/* Padding bottom en mobile para que el contenido no quede tapado */}
-      <div className="h-24 md:hidden" aria-hidden="true" />
+      <div className="h-[5.5rem] md:hidden" aria-hidden />
 
-      {/* Botón flotante desktop — sutil, esquina inferior derecha */}
       <a
         href={whatsappLink}
-        className="hidden md:flex fixed bottom-7 right-7 z-50 items-center gap-2.5 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-3 rounded-2xl text-sm font-semibold shadow-xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transition-all duration-300"
-        title="Consultá por WhatsApp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden md:flex fixed bottom-7 right-7 z-50 items-center gap-2.5 bg-primary text-primary-foreground px-5 py-3.5 rounded-2xl text-sm font-bold shadow-xl shadow-amber-900/40 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300"
+        title="Reservar turno por WhatsApp"
       >
-        <MessageCircle className="h-4.5 w-4.5 flex-shrink-0" />
-        Consultar gratis
+        <MessageCircle className="h-5 w-5 shrink-0" />
+        Reservar turno
       </a>
     </>
   )

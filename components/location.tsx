@@ -1,113 +1,116 @@
-import { MapPin, MessageCircle, Clock, Train } from "lucide-react"
+import Image from "next/image"
+import { MapPin, MessageCircle, Clock, ExternalLink, Building2 } from "lucide-react"
+import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 
-const locations = [
-  {
-    name: "Microcentro",
-    area: "Centro · Buenos Aires",
-    description: "En el corazón de la ciudad, accesible desde cualquier punto.",
-    details: ["Múltiples líneas de subte", "Amplia zona de estacionamiento", "Buena accesibilidad"],
-    gradient: "from-rose-50 to-pink-50/60",
-    border: "border-rose-200/50",
-    message: "Hola%2C%20quiero%20consultar%20sobre%20la%20sede%20de%20Microcentro",
-  },
-  {
-    name: "Caballito",
-    area: "Barrio tranquilo · Buenos Aires",
-    description: "En uno de los barrios más cómodos y accesibles de CABA.",
-    details: ["Línea A y H de subte", "Ambiente tranquilo y familiar", "Fácil estacionamiento"],
-    gradient: "from-fuchsia-50/50 to-rose-50",
-    border: "border-fuchsia-200/40",
-    message: "Hola%2C%20quiero%20consultar%20sobre%20la%20sede%20de%20Caballito",
-  },
-]
+const ADDRESS = "Boulogne Sur Mer 445, Once, CABA (CP 1089)"
+const MAPS_SEARCH =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent("Boulogne Sur Mer 445, Once, Buenos Aires")
 
 export function Location() {
-  const whatsappBase = "https://wa.me/5491161233500?text="
+  const wa = waLink(WA_PRESETS.ubicacion)
 
   return (
-    <section className="py-20 md:py-28 px-4 bg-card">
-      <div className="container mx-auto max-w-5xl">
-
-        {/* Encabezado */}
-        <div className="text-center mb-14">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
-            Ubicaciones
-          </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Estamos en CABA,
-            <br className="hidden md:block" /> cerca tuyo
+    <section id="ubicacion" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#040404]">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-10 md:mb-12">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Ubicación</p>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mb-3 text-balance">
+            Once, a mano. Local real.
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty">
-            Dos consultorios en puntos estratégicos de Buenos Aires.
-            Elegís el que mejor te quede y coordinamos tu turno.
+          <p className="text-white/45 text-sm sm:text-base max-w-lg mx-auto text-pretty">
+            La foto es solo comprobación de domicilio — el mapa y el mensaje de WhatsApp hacen el resto.
           </p>
         </div>
 
-        {/* Cards de ubicación */}
-        <div className="grid md:grid-cols-2 gap-5 mb-10">
-          {locations.map((loc) => (
-            <div
-              key={loc.name}
-              className={`group bg-gradient-to-br ${loc.gradient} rounded-3xl p-7 md:p-8 border ${loc.border} hover:shadow-xl hover:shadow-primary/8 hover:-translate-y-0.5 transition-all duration-300`}
-            >
-              {/* Ícono + Nombre */}
-              <div className="flex items-start gap-4 mb-4">
-                <div className="h-12 w-12 rounded-2xl bg-white/80 flex items-center justify-center shadow-sm flex-shrink-0 border border-white/60">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground">{loc.name}</h3>
-                  <p className="text-sm text-muted-foreground">{loc.area}</p>
-                </div>
+        <div className="grid lg:grid-cols-[1fr_280px] gap-5 md:gap-6 mb-5 items-stretch">
+          <div className="rounded-2xl border border-white/[0.08] bg-[#0b0b0b] p-6 md:p-8 flex flex-col ring-1 ring-inset ring-white/[0.03] shadow-2xl shadow-black/40">
+            <div className="flex items-start gap-3 mb-6">
+              <div className="h-12 w-12 rounded-xl bg-primary/10 border border-primary/25 flex items-center justify-center text-primary shrink-0">
+                <MapPin className="h-6 w-6" />
               </div>
+              <div>
+                <h3 className="font-display text-2xl md:text-3xl text-white">Vallejos Barbería 2.0</h3>
+                <p className="text-white/50 text-sm mt-1 leading-relaxed">{ADDRESS}</p>
+              </div>
+            </div>
 
-              {/* Descripción */}
-              <p className="text-sm md:text-base text-foreground/70 mb-5 leading-relaxed">
-                {loc.description}
-              </p>
+            <ul className="space-y-3 mb-8 flex-1 text-sm text-white/65">
+              <li className="flex items-center gap-2.5">
+                <Clock className="h-4 w-4 text-primary shrink-0" />
+                Lun a sáb · 10:00 – 20:00
+              </li>
+              <li className="flex items-center gap-2.5">
+                <MessageCircle className="h-4 w-4 text-primary shrink-0" />
+                <span>
+                  <a
+                    href="https://wa.me/5491144223540"
+                    className="text-primary font-semibold hover:underline"
+                  >
+                    11 4422-3540
+                  </a>{" "}
+                  · turnos
+                </span>
+              </li>
+            </ul>
 
-              {/* Detalles */}
-              <ul className="space-y-2 mb-6">
-                {loc.details.map((detail) => (
-                  <li key={detail} className="flex items-center gap-2 text-sm text-foreground/65">
-                    <Train className="h-3.5 w-3.5 text-primary flex-shrink-0" />
-                    {detail}
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA de ubicación */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-auto">
               <a
-                href={`${whatsappBase}${loc.message}`}
-                className="flex items-center gap-2 bg-white/80 hover:bg-primary hover:text-white text-primary backdrop-blur-sm rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 shadow-sm w-fit border border-white/60"
+                href={wa}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-xl px-5 py-3.5 hover:brightness-110 transition-all"
               >
-                <MessageCircle className="h-4 w-4" />
-                Reservar en {loc.name}
+                <MessageCircle className="h-5 w-5" />
+                Cómo llego / reservar
+              </a>
+              <a
+                href={MAPS_SEARCH}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-white/15 text-white rounded-xl px-5 py-3.5 hover:border-primary/50 hover:text-primary transition-colors"
+              >
+                <ExternalLink className="h-4 w-4" />
+                Abrir en Maps
               </a>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Banner de horarios */}
-        <div className="bg-gradient-to-r from-secondary/60 via-accent/20 to-secondary/60 rounded-2xl p-5 md:p-6 border border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Clock className="h-4 w-4 text-primary" />
+          {/* Fachada: card pequeña, mismo lenguaje que “evidencia” */}
+          <div className="flex flex-col rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0a0a0a] ring-1 ring-inset ring-white/[0.03] shadow-xl">
+            <div className="relative h-40 sm:h-48 lg:h-44 w-full flex-shrink-0">
+              <Image
+                src="/vallejos-local.png"
+                alt="Fachada y vidriera del local Vallejos Barbería 2.0, Boulogne Sur Mer 445"
+                fill
+                className="object-cover object-center"
+                sizes="280px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/55 to-transparent" />
+              <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/55 backdrop-blur-sm px-2 py-0.5 border border-white/10">
+                <Building2 className="h-3 w-3 text-primary" />
+                <span className="text-[9px] font-semibold uppercase tracking-wider text-white/80">
+                  Fachada
+                </span>
+              </div>
             </div>
-            <div>
-              <p className="font-semibold text-foreground text-sm">Horarios flexibles</p>
-              <p className="text-xs text-muted-foreground">Lunes a Sábados · Coordinamos según tu disponibilidad</p>
+            <div className="p-4 border-t border-white/[0.06] bg-gradient-to-b from-[#0c0c0c] to-[#080808] flex-1 flex flex-col">
+              <p className="font-display text-sm text-primary">Boulogne Sur Mer 445</p>
+              <p className="text-[11px] text-white/45 mt-1 leading-relaxed">Vidriera, logo, luz. Negocio de verdad.</p>
             </div>
           </div>
-          <a
-            href="https://wa.me/5491161233500?text=Hola%2C%20quiero%20consultar%20sobre%20horarios%20disponibles"
-            className="flex items-center gap-2 bg-primary text-primary-foreground rounded-xl px-5 py-2.5 text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm flex-shrink-0"
-          >
-            <MessageCircle className="h-4 w-4" />
-            Consultar disponibilidad
-          </a>
         </div>
 
+        <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] min-h-[280px] md:min-h-[320px] bg-black">
+          <iframe
+            title="Mapa: Vallejos Barbería 2.0, Boulogne Sur Mer 445"
+            src="https://www.google.com/maps?q=Boulogne+Sur+Mer+445%2C+Buenos+Aires%2C+Argentina&output=embed"
+            className="absolute inset-0 w-full h-full border-0 opacity-90"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
       </div>
     </section>
   )

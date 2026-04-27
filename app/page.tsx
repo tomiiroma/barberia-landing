@@ -1,9 +1,9 @@
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Hero } from "@/components/hero"
-import { ValueProposition } from "@/components/value-proposition"
+import { ValueBar } from "@/components/value-bar"
 import { Services } from "@/components/services"
-import { FeaturedTreatments } from "@/components/featured-treatments"
-import { Trust } from "@/components/trust"
+import { WhyUs } from "@/components/why-us"
+import { Gallery } from "@/components/gallery"
 import { Testimonials } from "@/components/testimonials"
 import { Location } from "@/components/location"
 import { FinalCTA } from "@/components/final-cta"
@@ -13,10 +13,10 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <ValueProposition />
+      <ValueBar />
       <Services />
-      <FeaturedTreatments />
-      <Trust />
+      <WhyUs />
+      <Gallery />
       <Testimonials />
       <Location />
       <FinalCTA />

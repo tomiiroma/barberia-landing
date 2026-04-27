@@ -2,37 +2,25 @@ import { Star, Quote } from "lucide-react"
 
 const testimonials = [
   {
-    name: "María Laura",
-    age: "45 años",
-    initials: "ML",
-    treatment: "HIFU",
-    stars: 5,
-    text: "Increíble el resultado del HIFU. Me hice el tratamiento hace 4 meses y la gente me pregunta qué me hice porque noto la diferencia. Patricia explica todo, te hace sentir cómoda y el resultado superó mis expectativas.",
-    color: "from-rose-100 to-pink-50",
+    name: "J. · Once",
+    initials: "J",
+    text: "El corte me arregla el mes. Fade limpio, sin explicar mil veces. Saco turno y listo.",
   },
   {
-    name: "Claudia R.",
-    age: "38 años",
-    initials: "CR",
-    treatment: "Masajes y Corporales",
-    stars: 5,
-    text: "Llevo más de 2 años yendo y cada tratamiento es mejor que el anterior. La atención es súper personalizada, nunca sentí que era una más. Los masajes drenantes cambiaron mi circulación por completo.",
-    color: "from-fuchsia-50 to-rose-50",
+    name: "L. · CABA",
+    initials: "L",
+    text: "Barba y líneas a punto. Salís con confianza. Vuelvo siempre al mismo clima.",
   },
   {
-    name: "Gabriela M.",
-    age: "52 años",
-    initials: "GM",
-    treatment: "Circuito Spa",
-    stars: 5,
-    text: "Fui por primera vez y ya reservé para el mes que viene. El circuito spa es una experiencia completa: relajante, profesional y los resultados son inmediatos. Patricia es un amor de persona además de ser excelente profesional.",
-    color: "from-pink-50 to-rose-50",
+    name: "M. · Balvanera",
+    initials: "M",
+    text: "Me explicó el diseño, quedó clavado. Atención pro, cero humo. Recomendado total.",
   },
 ]
 
 function StarRating({ count }: { count: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-0.5" aria-label={`${count} de 5 estrellas`}>
       {Array.from({ length: count }).map((_, i) => (
         <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
       ))}
@@ -42,75 +30,43 @@ function StarRating({ count }: { count: number }) {
 
 export function Testimonials() {
   return (
-    <section className="py-20 md:py-28 px-4 bg-secondary/30">
+    <section id="opiniones" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#0f0f0f]">
       <div className="container mx-auto max-w-6xl">
-
-        {/* Encabezado */}
-        <div className="text-center mb-14">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
-            Testimonios
+        <div className="text-center mb-12 md:mb-16">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-2">
+            Opiniones
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            Lo que dicen
-            <br className="hidden md:block" /> nuestras pacientes
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-3 text-balance">
+            La palabra del barrio
           </h2>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto text-pretty">
-            Resultados reales, experiencias reales.
+          <p className="text-white/50 max-w-lg mx-auto text-pretty">
+            Reseñas de clientes que vuelven. La prueba está en el sillón.
           </p>
         </div>
 
-        {/* Grid de testimonios */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-5">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className={`relative bg-gradient-to-br ${t.color} rounded-3xl p-7 border border-border/50 hover:shadow-lg hover:shadow-primary/6 hover:-translate-y-0.5 transition-all duration-300`}
+              className="relative rounded-2xl border border-white/10 bg-card/80 p-6 md:p-7 hover:border-primary/25 transition-colors"
             >
-              {/* Comilla decorativa */}
-              <Quote className="absolute top-5 right-5 h-8 w-8 text-primary/10 fill-primary/10" />
-
-              {/* Rating */}
+              <Quote className="absolute top-5 right-5 h-7 w-7 text-primary/15" />
               <div className="mb-4">
-                <StarRating count={t.stars} />
+                <StarRating count={5} />
               </div>
-
-              {/* Testimonio */}
-              <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-6 italic">
+              <p className="text-sm md:text-base text-white/70 leading-relaxed mb-6">
                 &ldquo;{t.text}&rdquo;
               </p>
-
-              {/* Separador */}
-              <div className="h-px bg-border/40 mb-4" />
-
-              {/* Identidad */}
+              <div className="h-px bg-white/8 mb-4" />
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-white border border-border/60 flex items-center justify-center shadow-sm flex-shrink-0">
-                  <span className="text-xs font-bold text-primary">{t.initials}</span>
+                <div className="h-9 w-9 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center text-xs font-bold text-primary">
+                  {t.initials}
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground text-sm">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {t.age} · {t.treatment}
-                  </p>
-                </div>
+                <p className="font-semibold text-white text-sm">{t.name}</p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Nota al pie */}
-        <p className="text-center text-xs text-muted-foreground mt-8">
-          ¿Ya fuiste? Contanos tu experiencia en{" "}
-          <a
-            href="https://instagram.com/tesentisbien"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-medium underline underline-offset-2 hover:text-primary/80"
-          >
-            @tesentisbien
-          </a>
-        </p>
-
       </div>
     </section>
   )
