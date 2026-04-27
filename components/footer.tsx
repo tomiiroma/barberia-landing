@@ -22,7 +22,7 @@ export function Footer() {
               <p className="text-white/45 text-sm">Barbería y peluquería 2.0</p>
             </div>
             <p className="text-sm text-white/45 leading-relaxed max-w-xs">
-              Corte, barba y diseño en Once. Barbería urbana con onda premium.
+              Barbería en Once. Corte, barba y diseño. Reservas por WhatsApp.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="#galeria" className="hover:text-primary transition-colors">
-                  Galería
+                  Trabajos
                 </a>
               </li>
               <li>
@@ -84,28 +84,27 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="h-px bg-white/8 mb-7" />
+        <div className="h-px bg-white/8 mb-8" />
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/35">
-          <p>© {new Date().getFullYear()} Vallejos Barbería 2.0. Todos los derechos reservados.</p>
-          <div className="flex items-center gap-2">
-            <span>Desarrollado por</span>
-            <a
-              href="https://www.rdtech.com.ar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-70 hover:opacity-100 transition-opacity"
-            >
-              <Image
-                src="/RD TECH.png"
-                alt="RD TECH"
-                width={320}
-                height={96}
-                className="h-8 w-auto object-contain brightness-0 invert"
-              />
-            </a>
-          </div>
-        </div>
+        <p className="text-center text-xs sm:text-sm text-white/40 mb-8">
+          © {new Date().getFullYear()} Vallejos Barbería 2.0. Todos los derechos reservados.
+        </p>
+
+        <a
+          href="https://www.rdtech.com.ar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent py-5 px-6 transition-colors hover:border-primary/30 hover:bg-white/[0.02]"
+        >
+          <span className="text-sm sm:text-base font-medium text-white/70">Desarrollado por</span>
+          <Image
+            src="/RD TECH.png"
+            alt="RD TECH"
+            width={400}
+            height={120}
+            className="h-12 sm:h-16 md:h-[4.5rem] w-auto max-w-[min(100%,280px)] object-contain object-left brightness-0 invert opacity-95"
+          />
+        </a>
       </div>
     </footer>
   )

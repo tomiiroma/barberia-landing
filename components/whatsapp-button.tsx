@@ -17,7 +17,7 @@ export function WhatsAppButton() {
             className="flex items-center justify-center gap-3 w-full bg-primary text-primary-foreground px-6 py-3.5 rounded-xl text-base font-bold shadow-lg shadow-amber-900/30 transition-all duration-200 active:scale-[0.98] min-h-[52px]"
           >
             <MessageCircle className="h-5 w-5 shrink-0" />
-            Reservar turno por WhatsApp
+            Reservar por WhatsApp
           </a>
           <p className="text-center text-[11px] text-white/35 mt-2">Lun a Sáb 10–20 h · Once, CABA</p>
         </div>
@@ -30,10 +30,10 @@ export function WhatsAppButton() {
         target="_blank"
         rel="noopener noreferrer"
         className="hidden md:flex fixed bottom-7 right-7 z-50 items-center gap-2.5 bg-primary text-primary-foreground px-5 py-3.5 rounded-2xl text-sm font-bold shadow-xl shadow-amber-900/40 hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300"
-        title="Reservar turno por WhatsApp"
+        title="Reservar turno — WhatsApp"
       >
         <MessageCircle className="h-5 w-5 shrink-0" />
-        Reservar turno
+        Reservar
       </a>
     </>
   )

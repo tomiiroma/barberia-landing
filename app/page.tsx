@@ -1,6 +1,7 @@
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Hero } from "@/components/hero"
 import { ValueBar } from "@/components/value-bar"
+import { LoyaltyStrip } from "@/components/loyalty-strip"
 import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
 import { Gallery } from "@/components/gallery"
@@ -18,6 +19,7 @@ export default function HomePage() {
       <WhyUs />
       <Gallery />
       <Testimonials />
+      <LoyaltyStrip />
       <Location />
       <FinalCTA />
       <Footer />

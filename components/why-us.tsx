@@ -4,7 +4,7 @@ const pillars = [
   {
     icon: Shield,
     title: "Confianza de verdad",
-    text: "Trabajo a la vista: pedís el estilo, cerramos el brief. Sin sorpresas, sin cuento.",
+    text: "Trabajo a la vista: pedís el estilo, lo cerramos en el espejo. Sin sorpresas.",
   },
   {
     icon: Timer,

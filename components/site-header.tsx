@@ -70,7 +70,7 @@ export function SiteHeader() {
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold text-sm px-4 py-2.5 rounded-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-md shadow-amber-900/20"
           >
-            Reservar turno
+            Reservar
           </a>
           <button
             type="button"
@@ -102,7 +102,7 @@ export function SiteHeader() {
             className="mt-2 flex items-center justify-center bg-primary text-primary-foreground font-bold py-3.5 rounded-lg"
             onClick={() => setOpen(false)}
           >
-            Reservar turno por WhatsApp
+            Reservar por WhatsApp
           </a>
         </div>
       )}

@@ -5,19 +5,19 @@ export function FinalCTA() {
   const whatsappLink = waLink(WA_PRESETS.default)
 
   return (
-    <section className="relative py-16 md:py-24 px-4 overflow-hidden bg-[#050505] border-t border-primary/15">
+    <section className="relative py-16 md:py-24 px-4 overflow-hidden bg-[#050505] border-t border-white/8">
       <div
-        className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_0%,oklch(0.5_0.1_85/0.12),transparent)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_0%,oklch(0.5_0.1_85/0.1),transparent)]"
         aria-hidden
       />
 
       <div className="container relative mx-auto max-w-3xl text-center">
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-4 leading-[1.05] text-balance">
-          No dejes el look
-          <span className="text-primary"> para mañana</span>
+          Tu turno
+          <span className="text-primary"> en un mensaje</span>
         </h2>
         <p className="text-lg text-white/50 mb-10 max-w-md mx-auto text-pretty">
-          Un mensaje y tenés fecha. Once, 10 a 20 h, manos que no fallan.
+          Día y horario. Once, Boulogne Sur Mer 445.
         </p>
 
         <a

@@ -7,8 +7,11 @@ const MAPS_SEARCH =
   "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent("Boulogne Sur Mer 445, Once, Buenos Aires")
 
+const OSM_EMBED =
+  "https://www.openstreetmap.org/export/embed.html?bbox=-58.4140%2C-34.6180%2C-58.3900%2C-34.6020&layer=mapnik&marker=-34.610%2C-58.404"
+
 export function Location() {
-  const wa = waLink(WA_PRESETS.ubicacion)
+  const waReserve = waLink(WA_PRESETS.default)
 
   return (
     <section id="ubicacion" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#040404]">
@@ -16,11 +19,8 @@ export function Location() {
         <div className="text-center mb-10 md:mb-12">
           <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Ubicación</p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mb-3 text-balance">
-            Once, a mano. Local real.
+            Once, a mano
           </h2>
-          <p className="text-white/45 text-sm sm:text-base max-w-lg mx-auto text-pretty">
-            La foto es solo comprobación de domicilio — el mapa y el mensaje de WhatsApp hacen el resto.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_280px] gap-5 md:gap-6 mb-5 items-stretch">
@@ -56,13 +56,13 @@ export function Location() {
 
             <div className="flex flex-col sm:flex-row gap-3 mt-auto">
               <a
-                href={wa}
+                href={waReserve}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-xl px-5 py-3.5 hover:brightness-110 transition-all"
               >
                 <MessageCircle className="h-5 w-5" />
-                Cómo llego / reservar
+                Reservar turno
               </a>
               <a
                 href={MAPS_SEARCH}
@@ -71,17 +71,16 @@ export function Location() {
                 className="inline-flex items-center justify-center gap-2 border border-white/15 text-white rounded-xl px-5 py-3.5 hover:border-primary/50 hover:text-primary transition-colors"
               >
                 <ExternalLink className="h-4 w-4" />
-                Abrir en Maps
+                Abrir en Google Maps
               </a>
             </div>
           </div>
 
-          {/* Fachada: card pequeña, mismo lenguaje que “evidencia” */}
           <div className="flex flex-col rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0a0a0a] ring-1 ring-inset ring-white/[0.03] shadow-xl">
             <div className="relative h-40 sm:h-48 lg:h-44 w-full flex-shrink-0">
               <Image
                 src="/vallejos-local.png"
-                alt="Fachada y vidriera del local Vallejos Barbería 2.0, Boulogne Sur Mer 445"
+                alt="Fachada del local Vallejos Barbería 2.0, Boulogne Sur Mer 445"
                 fill
                 className="object-cover object-center"
                 sizes="280px"
@@ -89,27 +88,33 @@ export function Location() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-[#020202]/55 to-transparent" />
               <div className="absolute top-2 right-2 flex items-center gap-1 rounded-full bg-black/55 backdrop-blur-sm px-2 py-0.5 border border-white/10">
                 <Building2 className="h-3 w-3 text-primary" />
-                <span className="text-[9px] font-semibold uppercase tracking-wider text-white/80">
-                  Fachada
-                </span>
+                <span className="text-[9px] font-semibold uppercase tracking-wider text-white/80">Local</span>
               </div>
             </div>
             <div className="p-4 border-t border-white/[0.06] bg-gradient-to-b from-[#0c0c0c] to-[#080808] flex-1 flex flex-col">
               <p className="font-display text-sm text-primary">Boulogne Sur Mer 445</p>
-              <p className="text-[11px] text-white/45 mt-1 leading-relaxed">Vidriera, logo, luz. Negocio de verdad.</p>
+              <p className="text-[11px] text-white/45 mt-1 leading-relaxed">Once, CABA</p>
             </div>
           </div>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] min-h-[280px] md:min-h-[320px] bg-black">
+        <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1a0c] min-h-[280px] md:min-h-[320px]">
           <iframe
-            title="Mapa: Vallejos Barbería 2.0, Boulogne Sur Mer 445"
-            src="https://www.google.com/maps?q=Boulogne+Sur+Mer+445%2C+Buenos+Aires%2C+Argentina&output=embed"
-            className="absolute inset-0 w-full h-full border-0 opacity-90"
+            title="Mapa Boulogne Sur Mer 445, Once, Buenos Aires"
+            src={OSM_EMBED}
+            className="h-[280px] w-full min-h-[280px] border-0 md:h-[320px] md:min-h-[320px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
+          <a
+            href={MAPS_SEARCH}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-center text-xs sm:text-sm text-primary/80 hover:text-primary py-2.5 border-t border-white/5 bg-black/20 font-medium"
+          >
+            Google Maps
+          </a>
         </div>
       </div>
     </section>
