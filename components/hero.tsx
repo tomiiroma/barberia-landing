@@ -78,18 +78,18 @@ export function Hero() {
                 className="absolute left-1/2 top-0 z-20 -translate-x-1/2 lg:left-10 lg:translate-x-0"
                 aria-hidden
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.12] bg-zinc-950/95 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.06] backdrop-blur-md">
+                <div className="flex h-[4.25rem] w-[4.25rem] items-center justify-center rounded-2xl border border-white/[0.12] bg-zinc-950/95 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.06] backdrop-blur-md sm:h-[5.25rem] sm:w-[5.25rem] sm:rounded-[1.125rem] lg:h-24 lg:w-24 lg:rounded-3xl">
                   <Image
                     src="/vallejos-logo.png"
                     alt=""
-                    width={40}
-                    height={40}
-                    className="h-9 w-9 object-contain opacity-95"
+                    width={96}
+                    height={96}
+                    className="h-11 w-auto max-h-11 object-contain opacity-95 sm:h-14 sm:max-h-14 lg:h-16 lg:max-h-16"
                   />
                 </div>
               </div>
 
-              <div className="relative pt-14 sm:pt-16 lg:pt-10">
+              <div className="relative pt-[3.5rem] sm:pt-20 lg:pt-[4.75rem]">
                 <div
                   className="relative w-full overflow-hidden rounded-[1.75rem] border border-white/[0.1] bg-[#060606] sm:rounded-[2rem] lg:h-[min(78vh,820px)] lg:min-h-[620px] shadow-[0_40px_100px_-24px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)_inset]"
                 >
