@@ -1,19 +1,17 @@
 import Image from "next/image"
-import { MapPin, MessageCircle, Clock, ExternalLink, Building2 } from "lucide-react"
+import { MapPin, MessageCircle, Clock, ExternalLink, Building2, CalendarDays } from "lucide-react"
 import {
   SHOP_ADDRESS_LINE1,
   SHOP_ADDRESS_LINE2,
   googleMapsEmbedUrl,
   googleMapsSearchUrl,
 } from "@/lib/address"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 
 const MAPS_SEARCH = googleMapsSearchUrl()
 const MAPS_EMBED = googleMapsEmbedUrl()
 
 export function Location() {
-  const waReserve = waLink(WA_PRESETS.default)
-
   return (
     <section id="ubicacion" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#040404]">
       <div className="container mx-auto max-w-6xl">
@@ -58,12 +56,12 @@ export function Location() {
 
             <div className="flex flex-col sm:flex-row gap-3 mt-auto">
               <a
-                href={waReserve}
+                href={BOOKING_PUBLIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold rounded-xl px-5 py-3.5 hover:brightness-110 transition-all"
               >
-                <MessageCircle className="h-5 w-5" />
+                <CalendarDays className="h-5 w-5" />
                 Reservar turno
               </a>
               <a

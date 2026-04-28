@@ -1,10 +1,7 @@
-import { MessageCircle, HeartHandshake } from "lucide-react"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { HeartHandshake, CalendarDays } from "lucide-react"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 
 export function LoyaltyStrip() {
-  const waFirst = waLink(WA_PRESETS.startToday)
-  const waBack = waLink(WA_PRESETS.loyaltyReturn)
-
   return (
     <section
       id="volver-vallejos"
@@ -51,26 +48,26 @@ export function LoyaltyStrip() {
               </div>
             </div>
             <p className="text-sm text-white/55 leading-relaxed mb-6">
-              Primera vez o de vuelta: coordinamos por WhatsApp y aclaramos cualquier duda antes de que te sientes en el
-              sillón.
+              Primera vez o de vuelta: elegí horario en la agenda cuando quieras; en el sillón también podés aclarar
+              cualquier consulta antes de ponerte en marcha.
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href={waFirst}
+                href={BOOKING_PUBLIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm py-3.5 px-4 rounded-xl hover:brightness-110 transition-all min-h-[48px] ring-1 ring-white/10"
               >
-                <MessageCircle className="h-4 w-4 shrink-0" />
+                <CalendarDays className="h-4 w-4 shrink-0" />
                 Primer turno + tarjeta
               </a>
               <a
-                href={waBack}
+                href={BOOKING_PUBLIC_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 border border-primary/45 text-primary hover:bg-primary/10 font-semibold text-sm py-3.5 px-4 rounded-xl transition-colors min-h-[48px]"
               >
-                <MessageCircle className="h-4 w-4 shrink-0" />
+                <CalendarDays className="h-4 w-4 shrink-0" />
                 Vuelvo a cortarme
               </a>
             </div>

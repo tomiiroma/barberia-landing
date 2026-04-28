@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 import { cn } from "@/lib/utils"
 
 const nav = [
@@ -22,7 +22,7 @@ const SHELL =
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const wa = waLink(WA_PRESETS.default)
+  const booking = BOOKING_PUBLIC_URL
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -83,7 +83,7 @@ export function SiteHeader() {
 
         <div className="relative z-10 flex shrink-0 items-center gap-2.5">
           <a
-            href={wa}
+            href={booking}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-primary-foreground shadow-[0_10px_28px_-8px_rgba(0,0,0,0.45)] ring-1 ring-white/12 transition-all hover:brightness-110 active:scale-[0.98] sm:hidden"
@@ -91,7 +91,7 @@ export function SiteHeader() {
             Reservar turno
           </a>
           <a
-            href={wa}
+            href={booking}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground shadow-[0_10px_28px_-8px_rgba(0,0,0,0.45)] ring-1 ring-white/12 transition-all hover:brightness-110 active:scale-[0.98] sm:inline-flex md:px-8 md:text-base lg:py-4"
@@ -123,7 +123,7 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href={wa}
+              href={booking}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 flex items-center justify-center rounded-xl bg-primary py-4 text-base font-bold text-primary-foreground"

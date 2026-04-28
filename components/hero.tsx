@@ -1,13 +1,12 @@
 import Image from "next/image"
-import { MessageCircle, MapPin } from "lucide-react"
+import { CalendarDays, MapPin } from "lucide-react"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 import { googleMapsSearchUrl } from "@/lib/address"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 import { SiteHeader } from "@/components/site-header"
 
 const HERO_SHELL = "mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-12 xl:px-14 2xl:px-16"
 
 export function Hero() {
-  const wa = waLink(WA_PRESETS.default)
   const mapsQuery = googleMapsSearchUrl()
 
   return (
@@ -43,18 +42,18 @@ export function Hero() {
 
               <div className="mx-auto mt-12 max-w-xl space-y-3 text-lg leading-relaxed text-white/60 sm:mt-14 sm:text-xl lg:mx-0 lg:max-w-[28rem] xl:text-[1.35rem] xl:leading-snug">
                 <p>Fade, barba, color y atención rápida.</p>
-                <p>Turnos simples por WhatsApp.</p>
+                <p>Turnos simples en la agenda online.</p>
               </div>
 
               <div className="mx-auto mt-14 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-stretch lg:mx-0">
                 <a
-                  href={wa}
+                  href={BOOKING_PUBLIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-[64px] sm:min-h-[68px] flex-1 items-center justify-center gap-3 rounded-2xl bg-primary px-10 py-4 text-base font-bold text-primary-foreground shadow-[0_20px_48px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/15 transition-all hover:brightness-110 active:scale-[0.99] sm:text-lg xl:px-11"
                 >
-                  <MessageCircle className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
-                  Reservar turno por WhatsApp
+                  <CalendarDays className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+                  Reservar turno
                 </a>
                 <a
                   href={mapsQuery}

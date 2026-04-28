@@ -23,7 +23,7 @@ export function Footer() {
             </div>
             <p className="text-sm text-white/45 leading-relaxed max-w-xs">
               Barbería en Once: corte, barba y diseño con mano segura. Tarjeta de fidelidad Vallejiano: 5 visitas, 6.º sin
-              cargo en el local. Reservas por WhatsApp.
+              cargo en el local. Agenda online y consultas rápidas por WhatsApp.
             </p>
           </div>
 

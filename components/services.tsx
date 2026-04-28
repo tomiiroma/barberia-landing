@@ -1,5 +1,5 @@
-import { MessageCircle, Scissors, Sparkles, Crown } from "lucide-react"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { CalendarDays, Scissors, Sparkles, Crown } from "lucide-react"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 
 const services = [
   {
@@ -7,21 +7,18 @@ const services = [
     title: "Corte premium",
     blurb: "Fade, textura, degradé. Lo que pinte, con criterio.",
     items: ["Degradé a piel o bajo", "Diseño y líneas", "Peinado y acabado"],
-    preset: "corte" as keyof typeof WA_PRESETS,
   },
   {
     icon: Crown,
     title: "Barba y detalle",
     blurb: "Perfilado, contornos, simetría. Nada descuidado.",
     items: ["Barba al ras o al largo", "Línea al cuello", "Combo con el corte"],
-    preset: "corte" as keyof typeof WA_PRESETS,
   },
   {
     icon: Sparkles,
     title: "Color / técnica",
     blurb: "Cambio de look con mano segura.",
     items: ["Mechas y claritos", "Color y retoques", "Ondas y alisados"],
-    preset: "color" as keyof typeof WA_PRESETS,
   },
 ]
 
@@ -36,14 +33,13 @@ export function Services() {
             El look que buscás, lo hacemos real.
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-pretty">
-            Cortes prolijos, barba, color y detalles finos. Pedí turno por WhatsApp, vení al local y salí listo.
+            Cortes prolijos, barba, color y detalles finos. Reservá en la agenda, vení al local y salí listo.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4 md:gap-5">
           {services.map((s) => {
             const Icon = s.icon
-            const href = waLink(WA_PRESETS[s.preset])
             return (
               <div
                 key={s.title}
@@ -67,12 +63,12 @@ export function Services() {
                   ))}
                 </ul>
                 <a
-                  href={href}
+                  href={BOOKING_PUBLIC_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground font-bold rounded-lg py-2.5 px-4 text-sm transition-colors"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <CalendarDays className="h-4 w-4" />
                   Pedir turno
                 </a>
               </div>
@@ -89,7 +85,7 @@ export function Services() {
             </p>
           </div>
           <a
-            href={waLink(WA_PRESETS.corte)}
+            href={BOOKING_PUBLIC_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center justify-center bg-primary text-primary-foreground font-bold rounded-xl px-8 py-4 text-base hover:brightness-110 transition-all min-h-[52px] ring-1 ring-white/10"

@@ -1,8 +1,8 @@
 import { Clock, MapPin } from "lucide-react"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 
 export function ValueBar() {
-  const wa = waLink(WA_PRESETS.default)
+  const booking = BOOKING_PUBLIC_URL
 
   return (
     <div className="border-y border-white/10 bg-[#080808]">
@@ -34,7 +34,7 @@ export function ValueBar() {
             <span>Boulogne Sur Mer 445, Once</span>
           </div>
           <a
-            href={wa}
+            href={booking}
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-bold hover:underline underline-offset-2"

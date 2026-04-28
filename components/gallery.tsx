@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { MessageCircle, Camera, ShieldCheck, Sparkles } from "lucide-react"
-import { waLink, WA_PRESETS } from "@/lib/whatsapp"
+import { CalendarDays, Camera, ShieldCheck, Sparkles } from "lucide-react"
+import { BOOKING_PUBLIC_URL } from "@/lib/booking"
 
 /** Evidencia de taller: imágenes chicas, overlay fuerte; el diseño carga el “lujo” */
 const EVIDENCE = [
@@ -25,8 +25,6 @@ const EVIDENCE = [
 ] as const
 
 export function Gallery() {
-  const wa = waLink(WA_PRESETS.default)
-
   return (
     <section id="galeria" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#050505] relative">
       <div
@@ -99,12 +97,12 @@ export function Gallery() {
             </div>
           </div>
           <a
-            href={wa}
+            href={BOOKING_PUBLIC_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-sm px-6 py-3.5 rounded-xl hover:brightness-110 transition-all shadow-lg shadow-amber-900/20"
           >
-            <MessageCircle className="h-4 w-4" />
+            <CalendarDays className="h-4 w-4" />
             Reservar ahora
           </a>
         </div>
