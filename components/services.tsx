@@ -33,15 +33,10 @@ export function Services() {
         <div className="text-center mb-10 md:mb-14">
           <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Servicios</p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-3 text-balance">
-            Lo que hacés en el espejo, acá se cumple
+            El look que buscás, lo hacemos real.
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-pretty">
-            Pedí turno, vení al local y llevate el look cerrado. Si te quedás en el ritmo del barrio, tu tarjeta de fidelidad
-            Vallejiano suma cada vuelta —{" "}
-            <a href="#volver-vallejos" className="text-primary/90 hover:underline underline-offset-2 font-medium">
-              así funciona acá
-            </a>
-            . Precios y packs los charlamos por mensaje.
+            Cortes prolijos, barba, color y detalles finos. Pedí turno por WhatsApp, vení al local y salí listo.
           </p>
         </div>
 

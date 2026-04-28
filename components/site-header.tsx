@@ -12,7 +12,6 @@ const nav = [
   { href: "#volver-vallejos", label: "Fidelidad" },
   { href: "#por-que", label: "Por qué" },
   { href: "#galeria", label: "Trabajos" },
-  { href: "#opiniones", label: "Opiniones" },
   { href: "#ubicacion", label: "Ubicación" },
 ]
 

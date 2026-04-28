@@ -5,7 +5,6 @@ import { LoyaltyStrip } from "@/components/loyalty-strip"
 import { Services } from "@/components/services"
 import { WhyUs } from "@/components/why-us"
 import { Gallery } from "@/components/gallery"
-import { Testimonials } from "@/components/testimonials"
 import { Location } from "@/components/location"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
@@ -19,7 +18,6 @@ export default function HomePage() {
       <LoyaltyStrip />
       <WhyUs />
       <Gallery />
-      <Testimonials />
       <Location />
       <FinalCTA />
       <Footer />
