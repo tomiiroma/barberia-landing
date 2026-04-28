@@ -4,88 +4,106 @@ import { googleMapsSearchUrl } from "@/lib/address"
 import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 import { SiteHeader } from "@/components/site-header"
 
+const HERO_SHELL = "mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-12 xl:px-14 2xl:px-16"
+
 export function Hero() {
   const wa = waLink(WA_PRESETS.default)
   const mapsQuery = googleMapsSearchUrl()
 
   return (
-    <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">
+    <section className="relative flex min-h-[100dvh] flex-col overflow-hidden lg:min-h-[85vh]">
       <div className="absolute inset-0 bg-hero-lux" aria-hidden />
-      <div className="absolute inset-0 bg-hero-mesh opacity-80 pointer-events-none" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-hero-mesh opacity-50" aria-hidden />
       <div
-        className="absolute inset-0 bg-noise opacity-[0.04] mix-blend-overlay pointer-events-none"
+        className="pointer-events-none absolute inset-0 bg-noise opacity-[0.02] mix-blend-overlay"
         aria-hidden
       />
       <div
-        className="absolute -top-1/3 left-1/2 h-[60vh] w-[min(100%,900px)] -translate-x-1/2 bg-[radial-gradient(ellipse,oklch(0.5_0.1_85/0.1)_0%,transparent_65%)] pointer-events-none blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-[55vh] w-[min(100%,900px)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_50%_0%,oklch(0.55_0.09_85/0.06),transparent_60%)] blur-3xl"
         aria-hidden
       />
-      <div className="absolute inset-0 bg-hero-vignette pointer-events-none" aria-hidden />
-
-      <div
-        className="absolute inset-6 sm:inset-8 md:inset-10 rounded-2xl border border-white/[0.05] pointer-events-none"
-        aria-hidden
-      />
+      <div className="pointer-events-none absolute inset-0 bg-hero-vignette" aria-hidden />
 
       <SiteHeader />
 
-      <div className="relative z-10 flex flex-1 flex-col justify-center py-28 pb-32 md:py-16 md:pb-24">
-        <div className="container mx-auto max-w-6xl px-4 w-full">
-          <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 items-center">
-            <div className="text-center lg:text-left">
-              <p className="text-primary text-[11px] sm:text-xs font-bold tracking-[0.28em] uppercase mb-3">
+      <div className="relative z-10 flex flex-1 flex-col justify-center pt-[5.75rem] pb-16 sm:pt-24 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 xl:pt-36 xl:pb-28">
+        <div className={HERO_SHELL}>
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-12 xl:gap-16 2xl:gap-20">
+            {/* 50% — texto y conversión */}
+            <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
+              <p className="mb-10 text-[11px] font-bold uppercase tracking-[0.26em] text-primary/95 sm:mb-12 sm:text-xs">
                 Vallejos Barbería 2.0 · Once, CABA
               </p>
-              <h1 className="font-display text-4xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl text-white text-balance mb-5">
-                Corte, barba y diseño.
-                <span className="text-primary"> Nivel Once.</span>
-              </h1>
-              <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-3">
-                Barbería y peluquería urbana. Fades, barba, diseño y color — mano firme, local de verdad.
-              </p>
-              <p className="text-sm sm:text-base text-white/45 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-8">
-                En el mostrador tenés la tarjeta de fidelidad Vallejiano: cada visita suma y el 6.º corte lo invitamos
-                nosotros, como premio a quien vuelve.
-              </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start sm:max-w-xl">
+              <h1 className="font-display text-balance uppercase leading-[0.9] tracking-[0.02em] text-white text-[clamp(3.25rem,7.5vw,8.75rem)]">
+                <span className="block">Corte, barba</span>
+                <span className="mt-2 block sm:mt-3">y diseño.</span>
+                <span className="mt-2 block text-primary sm:mt-3">Con nivel.</span>
+              </h1>
+
+              <div className="mx-auto mt-12 max-w-xl space-y-3 text-lg leading-relaxed text-white/60 sm:mt-14 sm:text-xl lg:mx-0 lg:max-w-[28rem] xl:text-[1.35rem] xl:leading-snug">
+                <p>Fade, barba, color y atención rápida.</p>
+                <p>Turnos simples por WhatsApp.</p>
+              </div>
+
+              <div className="mx-auto mt-14 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-stretch lg:mx-0">
                 <a
                   href={wa}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 bg-primary text-primary-foreground font-bold text-base sm:text-lg px-7 py-4 rounded-xl shadow-lg shadow-amber-900/25 hover:brightness-110 active:scale-[0.99] transition-all min-h-[52px] ring-1 ring-white/10"
+                  className="inline-flex min-h-[64px] sm:min-h-[68px] flex-1 items-center justify-center gap-3 rounded-2xl bg-primary px-10 py-4 text-base font-bold text-primary-foreground shadow-[0_20px_48px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/15 transition-all hover:brightness-110 active:scale-[0.99] sm:text-lg xl:px-11"
                 >
-                  <MessageCircle className="h-5 w-5 shrink-0" />
+                  <MessageCircle className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
                   Reservar turno por WhatsApp
                 </a>
                 <a
                   href={mapsQuery}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 text-white/85 border border-white/12 hover:border-primary/40 hover:text-primary px-6 py-4 rounded-xl font-medium transition-colors min-h-[52px]"
+                  className="inline-flex min-h-[64px] sm:min-h-[68px] flex-1 items-center justify-center gap-3 rounded-2xl border border-white/20 bg-transparent px-10 py-4 text-base font-semibold text-white/90 transition-colors hover:border-primary/40 hover:bg-white/[0.04] hover:text-primary sm:text-lg xl:px-11"
                 >
-                  <MapPin className="h-5 w-5 shrink-0" />
-                  Cómo llegar
+                  <MapPin className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+                  Ver ubicación
                 </a>
               </div>
+
+              <p className="mx-auto mt-10 max-w-md text-center text-sm text-white/38 sm:text-base lg:mx-0 lg:text-left">
+                Atención rápida en Once y alrededores.
+              </p>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[260px] sm:max-w-[300px]">
-                <div
-                  className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent blur-2xl opacity-70"
-                  aria-hidden
-                />
-                <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] p-7 sm:p-9 shadow-2xl ring-1 ring-white/5">
+            {/* 50% — imagen protagonista */}
+            <div className="relative mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
+              <div
+                className="absolute left-1/2 top-0 z-20 -translate-x-1/2 lg:left-10 lg:translate-x-0"
+                aria-hidden
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.12] bg-zinc-950/95 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.06] backdrop-blur-md">
                   <Image
                     src="/vallejos-logo.png"
-                    alt="Vallejos Barbería 2.0"
-                    width={400}
-                    height={400}
-                    className="w-full h-auto object-contain"
-                    priority
-                    quality={90}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-9 w-9 object-contain opacity-95"
                   />
+                </div>
+              </div>
+
+              <div className="relative pt-14 sm:pt-16 lg:pt-10">
+                <div
+                  className="relative w-full overflow-hidden rounded-[1.75rem] border border-white/[0.1] bg-[#060606] sm:rounded-[2rem] lg:h-[min(78vh,820px)] lg:min-h-[620px] shadow-[0_40px_100px_-24px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)_inset]"
+                >
+                  <div className="relative aspect-[3/4] w-full min-h-[420px] sm:min-h-[480px] lg:absolute lg:inset-0 lg:aspect-auto lg:min-h-0">
+                    <Image
+                      src="/vallejos-hero.png"
+                      alt="Cliente con fade en Vallejos Barbería 2.0"
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      priority
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030303]/78 via-[#030303]/12 to-[#030303]/28" />
+                  </div>
                 </div>
               </div>
             </div>

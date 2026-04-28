@@ -16,6 +16,10 @@ const nav = [
   { href: "#ubicacion", label: "Ubicación" },
 ]
 
+/** Ancho alineado al hero premium (~1400px) — más aire horizontal */
+const SHELL =
+  "mx-auto w-full max-w-[1400px] px-7 sm:px-11 md:px-12 lg:px-14 xl:px-16 2xl:px-[4.75rem]"
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -30,52 +34,74 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-[background,box-shadow,border-color] duration-300",
+        "fixed top-0 left-0 right-0 z-50 w-full transition-[background,box-shadow,border-color] duration-300",
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-white/8 shadow-lg shadow-black/20"
-          : "bg-gradient-to-b from-black/60 to-transparent border-b border-transparent"
+          ? "border-b border-white/[0.08] bg-background/94 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+          : "border-b border-white/[0.05] bg-gradient-to-b from-black/50 via-black/15 to-transparent"
       )}
     >
-      <div className="container mx-auto max-w-6xl px-4 h-16 md:h-[4.5rem] flex items-center justify-between gap-4">
-        <Link href="#" className="flex items-center gap-2.5 group shrink-0">
+      <div
+        className={cn(
+          SHELL,
+          "relative flex min-h-[76px] items-center justify-between gap-6 py-2 lg:h-[88px] lg:min-h-0 lg:py-0"
+        )}
+      >
+        <Link
+          href="#"
+          className="relative z-10 flex min-w-0 shrink-0 items-center gap-4 pr-2 sm:gap-4 md:gap-5 group"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src="/vallejos-logo.png"
             alt="Vallejos Barbería 2.0"
-            width={48}
-            height={48}
-            className="h-10 w-10 md:h-12 md:w-12 object-contain rounded-lg"
+            width={240}
+            height={64}
+            className="h-[40px] w-auto max-h-[42px] shrink-0 object-contain rounded-lg md:h-[52px] md:max-h-[52px] lg:h-14 lg:max-h-[56px]"
             priority
           />
-          <span className="hidden sm:block font-display text-lg md:text-xl tracking-wide text-white group-hover:text-primary transition-colors">
+          <span className="hidden font-display text-xl tracking-wide text-white transition-colors group-hover:text-primary sm:block md:text-2xl lg:text-[1.85rem]">
             VALLEJOS
-            <span className="text-white/50 font-sans text-xs block leading-none -mt-0.5 font-normal">BARBERÍA 2.0</span>
+            <span className="mt-1 block font-sans text-xs font-normal tracking-normal text-white/45 md:text-sm">
+              BARBERÍA 2.0
+            </span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav
+          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-0.5 lg:flex xl:gap-1"
+          aria-label="Principal"
+        >
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="px-3 py-2 text-sm text-white/75 hover:text-primary transition-colors"
+              className="px-3 py-2.5 text-[13px] text-white/68 transition-colors hover:text-white xl:px-3.5 xl:text-sm"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="relative z-10 flex shrink-0 items-center gap-2.5">
           <a
             href={wa}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center justify-center bg-primary text-primary-foreground font-semibold text-sm px-4 py-2.5 rounded-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-md shadow-amber-900/20"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-primary-foreground shadow-[0_10px_28px_-8px_rgba(0,0,0,0.45)] ring-1 ring-white/12 transition-all hover:brightness-110 active:scale-[0.98] sm:hidden"
           >
-            Reservar
+            Reservar turno
+          </a>
+          <a
+            href={wa}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-sm font-bold text-primary-foreground shadow-[0_10px_28px_-8px_rgba(0,0,0,0.45)] ring-1 ring-white/12 transition-all hover:brightness-110 active:scale-[0.98] sm:inline-flex md:px-8 md:text-base lg:py-4"
+          >
+            Reservar turno
           </a>
           <button
             type="button"
-            className="lg:hidden p-2 text-white/90"
+            className="p-2 text-white/90 lg:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
@@ -85,26 +111,28 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-white/10 bg-background/95 backdrop-blur-md px-4 py-4 flex flex-col gap-1">
-          {nav.map((item) => (
+        <div className="border-t border-white/10 bg-background/96 backdrop-blur-xl">
+          <div className={cn(SHELL, "flex flex-col gap-1 py-5")}>
+            {nav.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="border-b border-white/5 py-3.5 text-base text-white/85"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
             <a
-              key={item.href}
-              href={item.href}
-              className="py-3 text-base text-white/85 border-b border-white/5"
+              href={wa}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center justify-center rounded-xl bg-primary py-4 text-base font-bold text-primary-foreground"
               onClick={() => setOpen(false)}
             >
-              {item.label}
+              Reservar turno
             </a>
-          ))}
-          <a
-            href={wa}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 flex items-center justify-center bg-primary text-primary-foreground font-bold py-3.5 rounded-lg"
-            onClick={() => setOpen(false)}
-          >
-            Reservar por WhatsApp
-          </a>
+          </div>
         </div>
       )}
     </header>

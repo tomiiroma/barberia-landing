@@ -18,10 +18,7 @@ export function Location() {
     <section id="ubicacion" className="py-16 md:py-24 px-4 scroll-mt-20 bg-[#040404]">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-10 md:mb-12">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Ubicación</p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mb-3 text-balance">
-            Once, a mano
-          </h2>
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase">Ubicación</p>
         </div>
 
         <div className="grid lg:grid-cols-[1fr_280px] gap-5 md:gap-6 mb-5 items-stretch">
