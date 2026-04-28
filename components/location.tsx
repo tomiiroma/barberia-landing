@@ -1,14 +1,15 @@
 import Image from "next/image"
 import { MapPin, MessageCircle, Clock, ExternalLink, Building2 } from "lucide-react"
+import {
+  SHOP_ADDRESS_LINE1,
+  SHOP_ADDRESS_LINE2,
+  googleMapsEmbedUrl,
+  googleMapsSearchUrl,
+} from "@/lib/address"
 import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 
-const ADDRESS = "Boulogne Sur Mer 445, Once, CABA (CP 1089)"
-const MAPS_SEARCH =
-  "https://www.google.com/maps/search/?api=1&query=" +
-  encodeURIComponent("Boulogne Sur Mer 445, Once, Buenos Aires")
-
-const OSM_EMBED =
-  "https://www.openstreetmap.org/export/embed.html?bbox=-58.4140%2C-34.6180%2C-58.3900%2C-34.6020&layer=mapnik&marker=-34.610%2C-58.404"
+const MAPS_SEARCH = googleMapsSearchUrl()
+const MAPS_EMBED = googleMapsEmbedUrl()
 
 export function Location() {
   const waReserve = waLink(WA_PRESETS.default)
@@ -31,7 +32,11 @@ export function Location() {
               </div>
               <div>
                 <h3 className="font-display text-2xl md:text-3xl text-white">Vallejos Barbería 2.0</h3>
-                <p className="text-white/50 text-sm mt-1 leading-relaxed">{ADDRESS}</p>
+                <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                  {SHOP_ADDRESS_LINE1}
+                  <br />
+                  {SHOP_ADDRESS_LINE2}
+                </p>
               </div>
             </div>
 
@@ -92,16 +97,16 @@ export function Location() {
               </div>
             </div>
             <div className="p-4 border-t border-white/[0.06] bg-gradient-to-b from-[#0c0c0c] to-[#080808] flex-1 flex flex-col">
-              <p className="font-display text-sm text-primary">Boulogne Sur Mer 445</p>
-              <p className="text-[11px] text-white/45 mt-1 leading-relaxed">Once, CABA</p>
+              <p className="font-display text-sm text-primary">{SHOP_ADDRESS_LINE1}</p>
+              <p className="text-[11px] text-white/45 mt-1 leading-relaxed">{SHOP_ADDRESS_LINE2}</p>
             </div>
           </div>
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1a0c] min-h-[280px] md:min-h-[320px]">
           <iframe
-            title="Mapa Boulogne Sur Mer 445, Once, Buenos Aires"
-            src={OSM_EMBED}
+            title={`Mapa ${SHOP_ADDRESS_LINE1}, ${SHOP_ADDRESS_LINE2}`}
+            src={MAPS_EMBED}
             className="h-[280px] w-full min-h-[280px] border-0 md:h-[320px] md:min-h-[320px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

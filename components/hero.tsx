@@ -1,13 +1,12 @@
 import Image from "next/image"
 import { MessageCircle, MapPin } from "lucide-react"
+import { googleMapsSearchUrl } from "@/lib/address"
 import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 import { SiteHeader } from "@/components/site-header"
 
 export function Hero() {
   const wa = waLink(WA_PRESETS.default)
-  const mapsQuery =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Boulogne Sur Mer 445, Once, CABA")
+  const mapsQuery = googleMapsSearchUrl()
 
   return (
     <section className="relative min-h-[100dvh] flex flex-col overflow-hidden">

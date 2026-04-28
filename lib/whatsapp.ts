@@ -20,5 +20,5 @@ export const WA_PRESETS = {
   haveCard: "Hola, tengo la tarjeta de fidelidad Vallejiano y quiero sacar turno. ",
   corte: "Hola, quiero turno para corte + barba / diseño. ",
   color: "Hola, consulto por mechas / color / técnica. ",
-  ubicacion: "Hola, ¿me pasan cómo llegar a Boulogne Sur Mer 445? ",
+  ubicacion: "Hola, ¿me pasan cómo llegar a Boulogne Sur Mer 445, Once, CABA? ",
 } as const
