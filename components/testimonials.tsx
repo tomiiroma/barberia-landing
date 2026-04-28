@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "J. · Once",
     initials: "J",
-    text: "El corte me arregla el mes. Fade limpio, sin explicar mil veces. Saco turno y listo.",
+    text: "El corte me arregla el mes. Fade limpio, sin explicar mil veces. Saco turno, voy sumando con la tarjeta de fidelidad Vallejiano y listo — conviene quedarse en el ritmo.",
   },
   {
     name: "L. · CABA",

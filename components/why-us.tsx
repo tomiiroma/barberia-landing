@@ -1,10 +1,10 @@
-import { MapPin, Shield, Timer, Scissors } from "lucide-react"
+import { MapPin, Shield, Timer, Scissors, Gift } from "lucide-react"
 
 const pillars = [
   {
     icon: Shield,
     title: "Confianza de verdad",
-    text: "Trabajo a la vista: pedís el estilo, lo cerramos en el espejo. Sin sorpresas.",
+    text: "Trabajo a la vista: pedís el estilo, lo cerramos en el espejo. Sin sorpresas. Cada visita suma y se nota en el trato, no solo en el espejo.",
   },
   {
     icon: Timer,
@@ -20,6 +20,11 @@ const pillars = [
     icon: MapPin,
     title: "Once, a mano",
     text: "Boulogne Sur Mer 445. Cerca de todo, fácil de llegar. Si no conocés, te guiamos al toque.",
+  },
+  {
+    icon: Gift,
+    title: "Premio al que vuelve",
+    text: "Tarjeta de fidelidad Vallejiano en el local: cinco cortes sellados y el sexto sin cargo. Cercanía concreta para quien elige quedarse, no una oferta de una semana.",
   },
 ]
 
@@ -39,12 +44,12 @@ export function WhyUs() {
             Barrio con nivel. Resultado de estudio.
           </h2>
           <p className="text-white/50 max-w-xl mx-auto text-pretty text-base">
-            No vendemos humo: vendemos corte prolijo, atención directa y un local que ya conocés o que vas a querer
-            volver.
+            No vendemos humo: corte prolijo, atención directa y un local al que te gusta volver. La tarjeta de fidelidad
+            Vallejiano es la forma en que lo decimos sin palabras: cinco visitas, el sexto de la casa.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {pillars.map((p) => {
             const Icon = p.icon
             return (

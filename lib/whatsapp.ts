@@ -9,15 +9,15 @@ export function waLink(message: string) {
 
 export const WA_PRESETS = {
   default:
-    "Hola Vallejos, quiero reservar turno. Día/horario que me viene bien: ",
-  /** Primer corte + activar acumulación (programa 6.º gratis) */
+    "Hola Vallejos, quiero reservar turno. Día y horario que me viene: ",
+  /** Primera visita: calidad + activar tarjeta (6.º sin cargo en el local) */
   startToday:
-    "Hola, quiero reservar turno y empezar a sumar en la tarjeta Vallejiana (después del 5.º corte, el 6.º es gratis). El día/horario que me viene: ",
-  /** Vuelta / seguir acumulando */
+    "Hola, quiero coordinar turno para conocer su trabajo. Me gustaría activar la tarjeta de fidelidad Vallejiano en el local (voy sumando visitas y el 6.º corte es sin cargo). Me viene: ",
+  /** Cliente que ya vuelve y sigue sumando */
   loyaltyReturn:
-    "Hola, saco turno para seguir sumando en la tarjeta (programa 6.º gratis). ",
-  /** Ya tiene tarjeta y quiere turno */
-  haveCard: "Hola, tengo la tarjeta y quiero sacar turno. ",
+    "Hola, vuelvo con ustedes — sigo sumando con la tarjeta de fidelidad Vallejiano. El turno: ",
+  /** Ya tiene tarjeta y reserva directo */
+  haveCard: "Hola, tengo la tarjeta de fidelidad Vallejiano y quiero sacar turno. ",
   corte: "Hola, quiero turno para corte + barba / diseño. ",
   color: "Hola, consulto por mechas / color / técnica. ",
   ubicacion: "Hola, ¿me pasan cómo llegar a Boulogne Sur Mer 445? ",

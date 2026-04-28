@@ -36,7 +36,12 @@ export function Services() {
             Lo que hacés en el espejo, acá se cumple
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-pretty">
-            Pedí turno, vení al local y llevate el look cerrado. Precios y packs los charlamos por WhatsApp.
+            Pedí turno, vení al local y llevate el look cerrado. Si te quedás en el ritmo del barrio, tu tarjeta de fidelidad
+            Vallejiano suma cada vuelta —{" "}
+            <a href="#volver-vallejos" className="text-primary/90 hover:underline underline-offset-2 font-medium">
+              así funciona acá
+            </a>
+            . Precios y packs los charlamos por mensaje.
           </p>
         </div>
 
@@ -84,7 +89,8 @@ export function Services() {
           <div>
             <p className="font-display text-2xl md:text-3xl text-primary">Corte desde $15.000</p>
             <p className="text-white/60 text-sm mt-2 max-w-lg leading-relaxed">
-              Incluye cejas, barba, líneas y diseño. Confirmá vigencia por mensaje.
+              Incluye cejas, barba, líneas y diseño. Cada visita cuenta en tu tarjeta de fidelidad Vallejiano; el 6.º corte es
+              sin cargo cuando completás los sellos. Confirmá vigencia por mensaje.
             </p>
           </div>
           <a

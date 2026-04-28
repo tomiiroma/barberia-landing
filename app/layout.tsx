@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: "Vallejos Barbería 2.0 | Corte, barba y diseño · Once, CABA",
   description:
-    "Barbería y peluquería urbana en Once. Fades, barba, cejas, diseño, color y más. Lunes a sábado 10–20 h. Reservá por WhatsApp. Boulogne Sur Mer 445.",
+    "Barbería y peluquería urbana en Once: fades, barba, diseño y color. Tarjeta de fidelidad Vallejiano en el local: cada visita suma y el 6.º corte es sin cargo. Lun a sáb 10–20 h, Boulogne Sur Mer 445. Reservá por WhatsApp.",
   keywords: [
     "barbería Once",
     "corte fade CABA",
@@ -36,7 +36,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Vallejos Barbería 2.0",
-    description: "Corte, barba y diseño. Reservá tu turno por WhatsApp.",
+    description:
+      "Corte, barba y diseño en Once. Tarjeta de fidelidad Vallejiano: 5 visitas, 6.º sin cargo en el local. Reservá por WhatsApp.",
     locale: "es_AR",
     type: "website",
     images: [
@@ -51,7 +52,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Vallejos Barbería 2.0",
-    description: "Corte, barba y diseño · Once, CABA. Reservá por WhatsApp.",
+    description:
+      "Corte, barba y diseño · Once. Tarjeta de fidelidad Vallejiano: 5 visitas, 6.º sin cargo. Reservá por WhatsApp.",
     images: ["/vallejos-logo.png"],
   },
   // Favicon y Apple Touch: `app/icon.png` y `app/apple-icon.png` (misma identidad que /vallejos-logo.png)

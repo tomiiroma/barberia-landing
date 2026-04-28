@@ -22,7 +22,8 @@ export function Footer() {
               <p className="text-white/45 text-sm">Barbería y peluquería 2.0</p>
             </div>
             <p className="text-sm text-white/45 leading-relaxed max-w-xs">
-              Barbería en Once. Corte, barba y diseño. Reservas por WhatsApp.
+              Barbería en Once: corte, barba y diseño con mano segura. Tarjeta de fidelidad Vallejiano: 5 visitas, 6.º sin
+              cargo en el local. Reservas por WhatsApp.
             </p>
           </div>
 
@@ -32,6 +33,11 @@ export function Footer() {
               <li>
                 <a href="#servicios" className="hover:text-primary transition-colors">
                   Servicios
+                </a>
+              </li>
+              <li>
+                <a href="#volver-vallejos" className="hover:text-primary transition-colors">
+                  Fidelidad Vallejiano
                 </a>
               </li>
               <li>
@@ -94,16 +100,35 @@ export function Footer() {
           href="https://www.rdtech.com.ar"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent py-5 px-6 transition-colors hover:border-primary/30 hover:bg-white/[0.02]"
+          aria-label="Desarrollado por RD TECH — abre en nueva pestaña"
+          className="group/rd rdtech-credit-ring relative mx-auto block max-w-xl overflow-hidden rounded-2xl p-px outline-none transition-[transform,filter] duration-500 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#030303]"
         >
-          <span className="text-sm sm:text-base font-medium text-white/70">Desarrollado por</span>
-          <Image
-            src="/RD TECH.png"
-            alt="RD TECH"
-            width={400}
-            height={120}
-            className="h-12 sm:h-16 md:h-[4.5rem] w-auto max-w-[min(100%,280px)] object-contain object-left brightness-0 invert opacity-95"
-          />
+          <div className="relative flex flex-col items-center justify-center gap-3 rounded-[15px] bg-[#060606] px-6 py-6 sm:flex-row sm:gap-5 sm:py-7 sm:px-8 transition-colors duration-500 group-hover/rd:bg-[#0a0a0a]">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/45 transition-[color,letter-spacing] duration-500 group-hover/rd:text-primary/90 group-hover/rd:tracking-[0.26em]">
+              Desarrollado por
+            </span>
+            <div className="relative w-full max-w-[min(100%,480px)] sm:w-auto">
+              <div
+                className="pointer-events-none absolute -inset-6 rounded-xl opacity-0 blur-2xl transition-opacity duration-500 group-hover/rd:opacity-100"
+                style={{
+                  background:
+                    "radial-gradient(ellipse 70% 80% at 50% 50%, oklch(0.78 0.12 85 / 0.22), transparent 65%)",
+                }}
+                aria-hidden
+              />
+              <div
+                className="rdtech-credit-shine pointer-events-none absolute inset-0 -z-10 mix-blend-screen opacity-40"
+                aria-hidden
+              />
+              <Image
+                src="/RD TECH.png"
+                alt=""
+                width={520}
+                height={156}
+                className="relative z-[1] mx-auto h-[4.75rem] w-auto object-contain brightness-0 invert opacity-95 transition-[transform,opacity,filter] duration-500 ease-out group-hover/rd:scale-[1.06] group-hover/rd:opacity-100 group-hover/rd:brightness-110 group-hover/rd:drop-shadow-[0_0_20px_oklch(0.78_0.12_85_/_0.25)] sm:h-28 md:h-36 lg:h-40"
+              />
+            </div>
+          </div>
         </a>
       </div>
     </footer>

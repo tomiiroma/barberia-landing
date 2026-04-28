@@ -16,10 +16,10 @@ export default function HomePage() {
       <Hero />
       <ValueBar />
       <Services />
+      <LoyaltyStrip />
       <WhyUs />
       <Gallery />
       <Testimonials />
-      <LoyaltyStrip />
       <Location />
       <FinalCTA />
       <Footer />

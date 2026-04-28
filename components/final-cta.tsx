@@ -2,7 +2,7 @@ import { MessageCircle, ArrowRight } from "lucide-react"
 import { waLink, WA_PRESETS } from "@/lib/whatsapp"
 
 export function FinalCTA() {
-  const whatsappLink = waLink(WA_PRESETS.default)
+  const whatsappLink = waLink(WA_PRESETS.startToday)
 
   return (
     <section className="relative py-16 md:py-24 px-4 overflow-hidden bg-[#050505] border-t border-white/8">
@@ -13,11 +13,12 @@ export function FinalCTA() {
 
       <div className="container relative mx-auto max-w-3xl text-center">
         <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-4 leading-[1.05] text-balance">
-          Tu turno
-          <span className="text-primary"> en un mensaje</span>
+          Reservá hoy,
+          <span className="text-primary"> sumá desde la primera</span>
         </h2>
         <p className="text-lg text-white/50 mb-10 max-w-md mx-auto text-pretty">
-          Día y horario. Once, Boulogne Sur Mer 445.
+          Mandanos día y horario. En el local pedí la tarjeta de fidelidad Vallejiano: cada visita cuenta y el 6.º corte es
+          sin cargo cuando completás los sellos — Boulogne Sur Mer 445, Once.
         </p>
 
         <a

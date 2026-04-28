@@ -92,7 +92,9 @@ export function Gallery() {
             <div>
               <p className="text-sm font-semibold text-white">Más obras, mismo estándar</p>
               <p className="text-xs text-white/45 max-w-md mt-0.5">
-                Pedí turno y mirá el acabado en el espejo. Las fotos son solo un adelanto humilde.
+                Cada vuelta al sillón suma en tu tarjeta de fidelidad Vallejiano: buen resultado hoy, conveniencia mañana.
+                Las fotos son
+                solo un adelanto humilde.
               </p>
             </div>
           </div>

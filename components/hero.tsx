@@ -41,8 +41,12 @@ export function Hero() {
                 Corte, barba y diseño.
                 <span className="text-primary"> Nivel Once.</span>
               </h1>
-              <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-8">
+              <p className="text-base sm:text-lg text-white/65 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-3">
                 Barbería y peluquería urbana. Fades, barba, diseño y color — mano firme, local de verdad.
+              </p>
+              <p className="text-sm sm:text-base text-white/45 max-w-lg mx-auto lg:mx-0 leading-relaxed text-pretty mb-8">
+                En el mostrador tenés la tarjeta de fidelidad Vallejiano: cada visita suma y el 6.º corte lo invitamos
+                nosotros, como premio a quien vuelve.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start sm:max-w-xl">

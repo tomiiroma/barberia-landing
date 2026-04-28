@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils"
 
 const nav = [
   { href: "#servicios", label: "Servicios" },
+  { href: "#volver-vallejos", label: "Fidelidad" },
   { href: "#por-que", label: "Por qué" },
   { href: "#galeria", label: "Trabajos" },
   { href: "#opiniones", label: "Opiniones" },
