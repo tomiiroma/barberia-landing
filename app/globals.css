@@ -3,27 +3,27 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Vallejos Barbería 2.0 — negro / oro / blanco */
+/* Vallejos Barbería 2.0 — negro / oro / blanco (neutros sin tinte: hue 280 leía violeta/rosa) */
 :root {
-  --background: oklch(0.08 0.01 280);
+  --background: oklch(0.06 0 0);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.12 0.012 280);
+  --card: oklch(0.11 0 0);
   --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.1 0.01 280);
+  --popover: oklch(0.09 0 0);
   --popover-foreground: oklch(0.98 0 0);
   /* Oro premium */
   --primary: oklch(0.78 0.12 85);
-  --primary-foreground: oklch(0.1 0.02 280);
-  --secondary: oklch(0.16 0.012 280);
+  --primary-foreground: oklch(0.12 0 0);
+  --secondary: oklch(0.14 0 0);
   --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.2 0.01 280);
-  --muted-foreground: oklch(0.7 0.02 280);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.68 0 0);
   --accent: oklch(0.2 0.02 85);
   --accent-foreground: oklch(0.95 0.08 85);
   --destructive: oklch(0.5 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.25 0.02 280);
-  --input: oklch(0.2 0.01 280);
+  --border: oklch(0.22 0 0);
+  --input: oklch(0.18 0 0);
   --ring: oklch(0.78 0.12 85);
   --gold-line: oklch(0.55 0.1 80);
   --radius: 0.75rem;
@@ -97,7 +97,7 @@
     background-image: linear-gradient(165deg, #0a0a0b 0%, #030303 45%, #050506 100%),
       radial-gradient(ellipse 100% 80% at 50% -30%, oklch(0.45 0.1 85 / 0.18), transparent 55%),
       radial-gradient(ellipse 70% 50% at 100% 80%, oklch(0.32 0.06 85 / 0.1), transparent 50%),
-      radial-gradient(ellipse 50% 40% at 0% 60%, oklch(0.25 0.04 280 / 0.2), transparent 45%);
+      radial-gradient(ellipse 50% 40% at 0% 60%, oklch(0.22 0.03 85 / 0.12), transparent 45%);
   }
 
   .bg-hero-mesh {

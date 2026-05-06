@@ -98,7 +98,7 @@ export function Location() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1a0c] min-h-[280px] md:min-h-[320px]">
+        <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0a0a0a] min-h-[280px] md:min-h-[320px]">
           <iframe
             title={`Mapa ${SHOP_ADDRESS_LINE1}, ${SHOP_ADDRESS_LINE2}`}
             src={MAPS_EMBED}
