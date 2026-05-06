@@ -1,114 +1,100 @@
 import Image from "next/image"
-import { CalendarDays, MapPin } from "lucide-react"
-import { BOOKING_PUBLIC_URL } from "@/lib/booking"
-import { googleMapsSearchUrl } from "@/lib/address"
-import { SiteHeader } from "@/components/site-header"
-
-const HERO_SHELL = "mx-auto w-full max-w-[1400px] px-6 sm:px-10 lg:px-12 xl:px-14 2xl:px-16"
+import { MessageCircle, Sparkles, MapPin, ArrowRight, ShieldCheck } from "lucide-react"
 
 export function Hero() {
-  const mapsQuery = googleMapsSearchUrl()
+  const whatsappLink =
+    "https://wa.me/5491161233500?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20tratamientos"
 
   return (
-    <section className="relative flex min-h-[100dvh] flex-col overflow-hidden lg:min-h-[85vh]">
-      <div className="absolute inset-0 bg-hero-lux" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 bg-hero-mesh opacity-50" aria-hidden />
-      <div
-        className="pointer-events-none absolute inset-0 bg-noise opacity-[0.02] mix-blend-overlay"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 h-[55vh] w-[min(100%,900px)] -translate-x-1/2 bg-[radial-gradient(ellipse_at_50%_0%,oklch(0.55_0.09_85/0.06),transparent_60%)] blur-3xl"
-        aria-hidden
-      />
-      <div className="pointer-events-none absolute inset-0 bg-hero-vignette" aria-hidden />
+    <section className="relative min-h-screen overflow-hidden bg-background flex items-center">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_30%,oklch(0.91_0.05_348/0.35),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_10%_80%,oklch(0.96_0.014_348/0.4),transparent)]" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-secondary/60 to-transparent" />
 
-      <SiteHeader />
-
-      <div className="relative z-10 flex flex-1 flex-col justify-center pt-[5.75rem] pb-16 sm:pt-24 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24 xl:pt-36 xl:pb-28">
-        <div className={HERO_SHELL}>
-          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-12 xl:gap-16 2xl:gap-20">
-            {/* 50% — texto y conversión */}
-            <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-              <p className="mb-10 text-[11px] font-bold uppercase tracking-[0.26em] text-primary/95 sm:mb-12 sm:text-xs">
-                Vallejos Barbería 2.0 · Once, CABA
-              </p>
-
-              <h1 className="font-display text-balance uppercase leading-[0.9] tracking-[0.02em] text-white text-[clamp(3.25rem,7.5vw,8.75rem)]">
-                <span className="block">Corte, barba</span>
-                <span className="mt-2 block sm:mt-3">y diseño.</span>
-                <span className="mt-2 block text-primary sm:mt-3">Con nivel.</span>
-              </h1>
-
-              <div className="mx-auto mt-12 max-w-xl space-y-3 text-lg leading-relaxed text-white/60 sm:mt-14 sm:text-xl lg:mx-0 lg:max-w-[28rem] xl:text-[1.35rem] xl:leading-snug">
-                <p>Fade, barba, color y atención rápida.</p>
-                <p>Turnos simples en la agenda online.</p>
-              </div>
-
-              <div className="mx-auto mt-14 flex max-w-xl flex-col gap-4 sm:flex-row sm:items-stretch lg:mx-0">
-                <a
-                  href={BOOKING_PUBLIC_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[64px] sm:min-h-[68px] flex-1 items-center justify-center gap-3 rounded-2xl bg-primary px-10 py-4 text-base font-bold text-primary-foreground shadow-[0_20px_48px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/15 transition-all hover:brightness-110 active:scale-[0.99] sm:text-lg xl:px-11"
-                >
-                  <CalendarDays className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
-                  Reservar turno
-                </a>
-                <a
-                  href={mapsQuery}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-[64px] sm:min-h-[68px] flex-1 items-center justify-center gap-3 rounded-2xl border border-white/20 bg-transparent px-10 py-4 text-base font-semibold text-white/90 transition-colors hover:border-primary/40 hover:bg-white/[0.04] hover:text-primary sm:text-lg xl:px-11"
-                >
-                  <MapPin className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
-                  Ver ubicación
-                </a>
-              </div>
-
-              <p className="mx-auto mt-10 max-w-md text-center text-sm text-white/38 sm:text-base lg:mx-0 lg:text-left">
-                Atención rápida en Once y alrededores.
-              </p>
+      <div className="container relative mx-auto max-w-6xl px-4 py-24 md:py-32 lg:py-0 lg:min-h-screen lg:flex lg:items-center">
+        <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2.5 bg-white/90 backdrop-blur-sm border border-border px-4 py-2 rounded-full mb-8 shadow-sm">
+              <div className="h-2 w-2 rounded-full bg-primary animate-shimmer" />
+              <span className="text-sm font-medium text-foreground/80">Patricia González · Cosmiatra</span>
+              <span className="hidden sm:inline text-xs text-muted-foreground border-l border-border pl-2.5">
+                M.N. 62.996
+              </span>
             </div>
 
-            {/* 50% — imagen protagonista */}
-            <div className="relative mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
-              <div
-                className="absolute left-1/2 top-0 z-20 -translate-x-1/2 lg:left-10 lg:translate-x-0"
-                aria-hidden
-              >
-                <div className="flex h-[4.75rem] w-[4.75rem] items-center justify-center rounded-2xl border border-white/[0.12] bg-zinc-950/95 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.06] backdrop-blur-md sm:h-24 sm:w-24 sm:rounded-[1.125rem] lg:h-[7rem] lg:w-[7rem] lg:rounded-3xl">
-                  <Image
-                    src="/vallejos-logo.png"
-                    alt=""
-                    width={128}
-                    height={128}
-                    className="h-14 w-auto max-h-14 object-contain opacity-95 sm:h-16 sm:max-h-16 lg:h-[4.5rem] lg:max-h-[4.5rem]"
-                  />
-                </div>
-              </div>
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-5 leading-[1.05] tracking-tight text-balance">
+              Sentite bella.
+              <br />
+              <span className="text-primary">Sentite bien.</span>
+            </h1>
 
-              <div className="relative pt-16 sm:pt-[5.5rem] lg:pt-24">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed text-pretty">
+              Tratamientos estéticos personalizados en CABA. Resultados visibles, sin cirugía y con atención de
+              profesional certificada.
+            </p>
+
+            <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-10">
+              {[
+                { icon: Sparkles, text: "Consulta sin cargo" },
+                { icon: ShieldCheck, text: "Matrícula M.N. 62.996" },
+                { icon: MapPin, text: "Microcentro · Caballito" },
+              ].map((badge, i) => (
                 <div
-                  className="relative w-full overflow-hidden rounded-[1.75rem] border border-white/[0.1] bg-[#060606] sm:rounded-[2rem] lg:h-[min(78vh,820px)] lg:min-h-[620px] shadow-[0_40px_100px_-24px_rgba(0,0,0,0.85),0_0_0_1px_rgba(255,255,255,0.06)_inset]"
+                  key={i}
+                  className="flex items-center gap-1.5 bg-white border border-border px-3.5 py-1.5 rounded-full text-sm text-foreground/70 shadow-sm"
                 >
-                  <div className="relative aspect-[3/4] w-full min-h-[420px] sm:min-h-[480px] lg:absolute lg:inset-0 lg:aspect-auto lg:min-h-0">
-                    <Image
-                      src="/vallejos-hero.png"
-                      alt="Cliente con fade en Vallejos Barbería 2.0"
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      priority
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030303]/78 via-[#030303]/12 to-[#030303]/28" />
-                  </div>
+                  <badge.icon className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                  <span>{badge.text}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <a href={whatsappLink} className="group">
+                <div className="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground px-7 py-4 rounded-2xl text-lg font-semibold shadow-lg hover:shadow-primary/25 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5">
+                  <MessageCircle className="h-5 w-5 flex-shrink-0" />
+                  Quiero mi consulta gratis
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </div>
+              </a>
+            </div>
+
+            <p className="text-sm text-muted-foreground mt-3 text-center lg:text-left">
+              Sin compromiso · Respondemos en el día
+            </p>
+          </div>
+
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div className="relative animate-float">
+              <div className="absolute -inset-6 rounded-full border-2 border-primary/10" />
+              <div className="absolute -inset-12 rounded-full border border-primary/5" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/15 via-accent/20 to-secondary/30 blur-3xl scale-125" />
+              <div className="relative bg-white/70 backdrop-blur-md rounded-full p-6 md:p-8 shadow-2xl border border-white/80">
+                <Image
+                  src="/nuevo_logo.png"
+                  alt="Te Sentís Bien — Estética Integral"
+                  width={300}
+                  height={300}
+                  className="h-52 w-52 md:h-64 md:w-64 lg:h-56 lg:w-56 xl:h-64 xl:w-64 object-contain"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-3 -right-3 md:-bottom-5 md:-right-5 bg-white rounded-2xl px-3.5 py-2.5 shadow-xl border border-border">
+                <p className="text-[10px] text-muted-foreground font-medium leading-none mb-1">Matrícula Nacional</p>
+                <p className="text-sm font-bold text-foreground">M.N. 62.996</p>
+              </div>
+              <div className="absolute -top-2 -left-4 md:-top-4 md:-left-6 bg-white rounded-2xl px-3 py-2 shadow-xl border border-border">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                  <p className="text-xs font-semibold text-foreground">CABA</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
     </section>
   )
 }

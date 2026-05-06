@@ -1,11 +1,11 @@
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Hero } from "@/components/hero"
-import { LoyaltyStrip } from "@/components/loyalty-strip"
+import { ValueProposition } from "@/components/value-proposition"
 import { Services } from "@/components/services"
-import { WhyUs } from "@/components/why-us"
-import { Gallery } from "@/components/gallery"
+import { FeaturedTreatments } from "@/components/featured-treatments"
+import { Trust } from "@/components/trust"
+import { Testimonials } from "@/components/testimonials"
 import { Location } from "@/components/location"
-import { BookingOnline } from "@/components/booking-online"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
 
@@ -13,11 +13,11 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <BookingOnline />
+      <ValueProposition />
       <Services />
-      <LoyaltyStrip />
-      <WhyUs />
-      <Gallery />
+      <FeaturedTreatments />
+      <Trust />
+      <Testimonials />
       <Location />
       <FinalCTA />
       <Footer />
